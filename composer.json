@@ -17,7 +17,7 @@
         "oro/platform": "1.10.*"
     },
     "autoload": {
-        "psr-0": { "Ds\\Bundle\\PortalBundle": "" }
+        "psr-4": { "Ds\\Bundle\\PortalBundle\\": "" }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
