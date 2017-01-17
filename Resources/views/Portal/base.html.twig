@@ -39,7 +39,7 @@
                         <nav class="navbar navbar-default">
                             <div class="container-fluid">
                                 <div class="navbar-header">
-                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ds-portal-menu">
                                         <span class="sr-only">Toggle navigation</span>
                                         <span class="icon-bar"></span>
                                         <span class="icon-bar"></span>
@@ -49,91 +49,35 @@
                                         {{ oro_config_value('ds_portal.meta_title') }}
                                     </a>
                                 </div>
-                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li>
-                                            <a href="{{ path('ds_portal_portal_home_index') }}">
-                                                Home <span class="sr-only">(current)</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ path('ds_portalservice_portal_service_index') }}">
-                                                {% trans %}ds.portalservice.service.page.portal.index.title{% endtrans %}
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ path('ds_portalnotification_portal_notification_index') }}">
-                                                {% trans %}ds.portalnotification.notification.page.portal.index.title{% endtrans %}
-                                            </a>
-                                        </li>
-                                        {% if app.user %}
+                                <div class="collapse navbar-collapse" id="ds-portal-menu">
+                                    {% if app.user %}
+                                        <ul class="nav navbar-nav navbar-right">
                                             <li class="dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                     {% trans %}ds.account.home.page.account.index.title{% endtrans %} <span class="caret"></span>
                                                 </a>
-                                                <ul class="dropdown-menu">
-                                                    <li>
-                                                        <span>
-                                                            <i class="fa fa-user"></i> {{ ds_persona('standard', 'firstName') }}
-                                                        </span>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{{ path('ds_accountdashboard_account_dashboard_index') }}">
-                                                            {% trans %}ds.accountdashboard.page.account.index.title{% endtrans %}
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{{ path('ds_accountbpm_account_task_index') }}">
-                                                            My Tasks
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{{ path('ds_accountcase_account_case_index') }}">
-                                                            {% trans %}ds.accountcase.caseentity.page.account.index.title{% endtrans %}
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="{{ path('ds_accountuserpersona_account_persona_view', { slug: 'standard' }) }}">
-                                                            {% trans %}ds.accountuserpersona.persona.page.account.view.title{% endtrans %}
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a id="logout" href="/app_dev.php/user/logout">
-                                                            Logout
-                                                        </a>
-                                                        <script>
-                                                            $(document).ready(function() {
-                                                                $('#logout').click(function() {
-                                                                    $.ajax({
-                                                                        url: $(this).attr('href'),
-                                                                        success: function() {
-                                                                            window.location = '{{ path('ds_portal_portal_home_index') }}';
-                                                                        },
-                                                                        error: function() {
-                                                                            window.location = '{{ path('ds_portal_portal_home_index') }}';
-                                                                        }
-                                                                    });
+                                                {{ oro_menu_render('ds_account_menu', { rootClass: 'dropdown-menu' }) }}
+                                            </li>
+                                        </ul>
+                                        <script>
+                                            $(document).ready(function() {
+                                                $('#logout').click(function() {
+                                                    $.ajax({
+                                                        url: $(this).attr('href'),
+                                                        success: function() {
+                                                            window.location = '{{ path('ds_portal_portal_home_index') }}';
+                                                        },
+                                                        error: function() {
+                                                            window.location = '{{ path('ds_portal_portal_home_index') }}';
+                                                        }
+                                                    });
 
-                                                                    return false;
-                                                                });
-                                                            });
-                                                        </script>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        {% else %}
-                                            <li>
-                                                <a href="{{ path('ds_accountdashboard_account_dashboard_index') }}">
-                                                    {% trans %}ds.account.home.page.account.index.title{% endtrans %}
-                                                </a>
-                                            </li>
-                                        {% endif %}
-                                        <li>
-                                            <a href="">
-                                                <i class="fa fa-search"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
+                                                    return false;
+                                                });
+                                            });
+                                        </script>
+                                    {% endif %}
+                                    {{ oro_menu_render('ds_portal_menu', { rootClass: 'nav navbar-nav navbar-right' }) }}
                                 </div>
                             </div>
                         </nav>

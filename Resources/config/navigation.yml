@@ -1,0 +1,15 @@
+oro_menu_config:
+    templates:
+        ds_portal_menu:
+            template: DsPortalBundle:Portal:menu/portal_menu.html.twig
+            currentClass: active
+            ancestorClass: active
+    items:
+        ds_portal_portal_home_index:
+            label: ds.portal.home.page.portal.index.title
+            route: ds_portal_portal_home_index
+    tree:
+        ds_portal_menu:
+            type: ds_portal_menu
+            children:
+                ds_portal_portal_home_index: ~
