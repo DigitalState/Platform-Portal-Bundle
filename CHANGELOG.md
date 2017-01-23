@@ -4,3 +4,4 @@ This changelog references the relevant changes (new features, changes and bugs) 
 
   * Added ds_portal_menu navigation menu.
   * Removed hard-coded links in base template.
+  * Removed reset link.
