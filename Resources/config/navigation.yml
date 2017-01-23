@@ -8,6 +8,8 @@ oro_menu_config:
         ds_portal_portal_home_index:
             label: ds.portal.home.page.portal.index.title
             route: ds_portal_portal_home_index
+            extras:
+                position: 10
     tree:
         ds_portal_menu:
             type: ds_portal_menu
