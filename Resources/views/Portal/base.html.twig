@@ -76,6 +76,14 @@
                                                 });
                                             });
                                         </script>
+                                    {% else %}
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li>
+                                                <a href="{{ path('ds_accountdashboard_account_dashboard_index') }}">
+                                                    {% trans %}ds.account.home.page.account.index.title{% endtrans %}
+                                                </a>
+                                            </li>
+                                        </ul>
                                     {% endif %}
                                     {{ oro_menu_render('ds_portal_menu', { rootClass: 'nav navbar-nav navbar-right' }) }}
                                 </div>
