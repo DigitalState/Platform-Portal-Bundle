@@ -9,4 +9,4 @@ This changelog references the relevant changes (new features, changes and bugs) 
   * Added portal_navigation widget position.
   * Added portal_brand widget position.
   * Removed placeholder chat icon.
-  
+  * Added portal_footer widget position.
