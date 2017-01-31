@@ -76,9 +76,6 @@
                     {% for widget in ds_widgets({ position: 'ds_portal_portal_footer' }) %}
                         {{ widget.content|raw }}
                     {% endfor %}
-                    <p class="text-muted">
-                        &copy; 2016 {{ oro_config_value('ds_portal.title') }}. <span class="hidden-xs">All Rights Reserved.</span><br>
-                    </p>
                 {% endblock %}
             </footer>
         {% endblock %}

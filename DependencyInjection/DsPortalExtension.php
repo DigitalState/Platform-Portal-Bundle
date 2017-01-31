@@ -23,6 +23,7 @@ class DsPortalExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('parameters.yml');
         $loader->load('listeners.yml');
+        $loader->load('widgets.yml');
 
         $container->prependExtensionConfig($this->getAlias(), array_intersect_key($config, array_flip([ 'settings' ])));
     }
