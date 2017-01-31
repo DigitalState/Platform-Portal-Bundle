@@ -7,4 +7,5 @@ This changelog references the relevant changes (new features, changes and bugs) 
   * Removed reset link.
   * Added locale to portal routes.
   * Added portal_navigation widget position.
+  * Added portal_brand widget position.
   
