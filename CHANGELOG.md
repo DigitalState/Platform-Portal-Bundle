@@ -8,4 +8,5 @@ This changelog references the relevant changes (new features, changes and bugs) 
   * Added locale to portal routes.
   * Added portal_navigation widget position.
   * Added portal_brand widget position.
+  * Removed placeholder chat icon.
   
