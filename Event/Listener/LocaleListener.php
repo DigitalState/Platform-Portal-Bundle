@@ -40,6 +40,13 @@ class LocaleListener
      */
     public function onKernelRequest(GetResponseEvent $event)
     {
+        $route = $this->stack->getCurrentRequest()->get('_route');
+
+        //@todo change this condition to something appropriate.
+        if (!preg_match('/^ds_portal/', $route)) {
+            return;
+        }
+
         $this->translator->setLocale($this->stack->getCurrentRequest()->getLocale());
     }
 }
