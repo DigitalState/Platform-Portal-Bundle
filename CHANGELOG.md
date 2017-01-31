@@ -6,3 +6,5 @@ This changelog references the relevant changes (new features, changes and bugs) 
   * Removed hard-coded links in base template.
   * Removed reset link.
   * Added locale to portal routes.
+  * Added portal_navigation widget position.
+  
