@@ -4,6 +4,7 @@ namespace Ds\Bundle\PortalBundle\Event\Listener;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Translation\DataCollectorTranslator;
+use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 
 /**
@@ -47,6 +48,7 @@ class LocaleListener
             return;
         }
 
-        $this->translator->setLocale($this->stack->getCurrentRequest()->getLocale());
+        $locale = $this->stack->getCurrentRequest()->getLocale();
+        $this->translator->setLocale($locale);
     }
 }
