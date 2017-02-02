@@ -6,3 +6,9 @@ services:
             - @translator
         tags:
             - { name: kernel.event_listener, event: kernel.request }
+    ds.portal.event.listener.navigation:
+        class: Ds\Bundle\PortalBundle\Event\Listener\NavigationListener
+        arguments:
+            - @request_stack
+        tags:
+            - { name: kernel.event_listener, event: oro_menu.configure.ds_portal_main, method: onNavigationConfigure }
