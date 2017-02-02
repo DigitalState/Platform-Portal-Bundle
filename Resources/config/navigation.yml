@@ -1,7 +1,7 @@
 oro_menu_config:
     templates:
-        ds_portal_menu:
-            template: DsPortalBundle:Portal:menu/menu.html.twig
+        ds_portal_main:
+            template: DsPortalBundle:Portal:menu/main.html.twig
             currentClass: active
             ancestorClass: active
     items:
@@ -12,7 +12,7 @@ oro_menu_config:
                 position: 10
                 showNonAuthorized: true
     tree:
-        ds_portal_menu:
-            type: ds_portal_menu
+        ds_portal_main:
+            type: ds_portal_main
             children:
                 ds_portal_portal_home_index: ~
