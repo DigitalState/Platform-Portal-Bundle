@@ -5,15 +5,10 @@
 {% block main %}
     <div class="jumbotron">
         <h1>
-            Welcome to <br>{{ oro_config_value('ds_portal.title') }}
+            {% trans with { '%portal%': oro_config_value('ds_portal.title') } %}ds.portal.page.portal.home.index.welcome.title{% endtrans %}
         </h1>
-        <p class="lead">
-            Sign in to access services.
-        </p>
-        <p>
-            <a class="btn btn-lg btn-success" href="{{ path('ds_accountdashboard_account_dashboard_index') }}" role="button">
-                Login
-            </a>
-        </p>
+        {% for widget in ds_widgets({ position: 'ds_portal_portal_home_index_welcome' }) %}
+            {{ widget.content|raw }}
+        {% endfor %}
     </div>
 {% endblock %}

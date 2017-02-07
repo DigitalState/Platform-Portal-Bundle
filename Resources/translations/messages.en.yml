@@ -21,8 +21,10 @@ ds:
                     label: Author
                 title:
                     label: Title
-        home:
-            page:
-                portal:
+        page:
+            portal:
+                home:
                     index:
                         title: Home
+                        welcome:
+                            title: Welcome to %portal%

@@ -21,8 +21,10 @@ ds:
                     label: Auteur
                 title:
                     label: Titre
-        home:
-            page:
-                portal:
+        page:
+            portal:
+                home:
                     index:
                         title: Accueil
+                        welcome:
+                            title: Bienvenue sur %portal%
