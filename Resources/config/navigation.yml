@@ -6,7 +6,7 @@ oro_menu_config:
             ancestorClass: active
     items:
         ds_portal_portal_home_index:
-            label: ds.portal.home.page.portal.index.title
+            label: ds.portal.page.portal.home.index.title
             route: ds_portal_portal_home_index
             extras:
                 position: 10
