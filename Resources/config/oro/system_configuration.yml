@@ -1,4 +1,4 @@
-oro_system_configuration:
+system_configuration:
     groups:
         ds_portal:
             title: ds.portal.system_configuration.groups.portal.title
